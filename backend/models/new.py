@@ -15,4 +15,4 @@ class New(Base):
     title = Column(String,index=True)
     content = Column(String)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    category = Column(String,index=True)
+    category = Column(String)
