@@ -4,3 +4,4 @@ README.md
 uv.lock
 .env
 .venv
+__pycache__
