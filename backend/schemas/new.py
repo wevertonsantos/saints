@@ -1,7 +1,7 @@
 from datetime import datetime
 from pydantic import BaseModel
 
-class NewSchema(BaseModel):
+class NewResponse(BaseModel):
     title: str
     content: str
     created_at: datetime
