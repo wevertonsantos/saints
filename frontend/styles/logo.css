@@ -1,0 +1,11 @@
+.logo {
+    background-color: #286188;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo .text {
+    font-size: 54px;
+}
