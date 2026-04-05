@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #292929;
+    font-weight: 500;
+}
+
+.navbar .items{
+    height: 60px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .items li {
+    margin: 10px;
+}
+
+.navbar .items li a{
+    text-decoration: none;
+}
