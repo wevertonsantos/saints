@@ -1,3 +1,3 @@
-import { fixedMenu } from "./navbar.js";
+import { showLogo } from "./logo.js";
 
-fixedMenu()
+showLogo();
