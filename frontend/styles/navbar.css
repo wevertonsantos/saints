@@ -1,6 +1,7 @@
 .navbar {
     background-color: #292929;
     font-weight: 500;
+    width: 100%;
 }
 
 .navbar .items{

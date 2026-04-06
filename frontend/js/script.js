@@ -1,4 +1,3 @@
-import { fixedMenu } from "./navbar";
+import { fixedMenu } from "./navbar.js";
 
-console.log("Hello")
 fixedMenu()
