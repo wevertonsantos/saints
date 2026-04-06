@@ -14,3 +14,9 @@
 .navbar .items li {
     margin: 10px;
 }
+
+.navbar .items li a:hover {
+    padding-bottom: 6px;
+    color: #59a9df;
+    border-bottom: 2.5px solid #59a9df;
+}
