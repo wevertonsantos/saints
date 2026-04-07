@@ -1,3 +1,5 @@
-import { showLogo } from "./logo.js";
+import { showLogo } from "./logo.js"
+import { mainHeadlines } from "./mainHeadlines.js"
 
-showLogo();
+showLogo()
+mainHeadlines()
