@@ -15,9 +15,11 @@ const items = (list) => {
         link.setAttribute("href","#")
         item.appendChild(link)
         const img = document.createElement("img")
-        if (i == 1) {
-            
-        }
         link.appendChild(img)
+
+        if (i == 0) {
+            img.classList.add("main-img")
+            img.setAttribute("src","../assets/handontablets.jpg")
+        }
     }    
 }
