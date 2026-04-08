@@ -1,10 +1,10 @@
-const elementMainHeadlines = document.querySelector(".main-headlines")
+const sectionMainHeadlines = document.querySelector(".main-headlines")
 
 export const mainHeadlines = () => {
     const list = document.createElement("ul")
     list.classList.add("items")
     items(list)
-    elementMainHeadlines.appendChild(list)
+    sectionMainHeadlines.appendChild(list)
 }
 
 const items = (list) => {
@@ -19,7 +19,13 @@ const items = (list) => {
 
         if (i == 0) {
             img.classList.add("main-img")
+            img.setAttribute("src", "../assets/handontablets.jpg")
+        } else if (i == 1) {
+            img.classList.add("second-img")
+            img.setAttribute("src","../assets/handontablets.jpg")
+        } else {
+            img.classList.add("third-img")
             img.setAttribute("src","../assets/handontablets.jpg")
         }
-    }    
+    }
 }
