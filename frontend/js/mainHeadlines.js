@@ -2,19 +2,23 @@ const sectionMainHeadlines = document.querySelector(".main-headlines")
 
 export const mainHeadlines = () => {
     const list = document.createElement("ul")
+
     list.classList.add("items")
+
     items(list)
+    
     sectionMainHeadlines.appendChild(list)
 }
 
 const items = (list) => {
     for (let i = 0; i < 3; i++){
         const item = document.createElement("li")
-        list.appendChild(item)
         const link = document.createElement("a")
+        const img = document.createElement("img")
+
+        list.appendChild(item)
         link.setAttribute("href","#")
         item.appendChild(link)
-        const img = document.createElement("img")
         link.appendChild(img)
 
         if (i == 0) {
