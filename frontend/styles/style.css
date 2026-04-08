@@ -11,6 +11,10 @@
     font-family: "Inter", sans-serif;
 }
 
+body {
+    background-color: #286188;
+}
+
 a {
     text-decoration: none;
 }
