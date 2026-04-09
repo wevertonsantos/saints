@@ -1,9 +1,10 @@
 .logo {
     background-color: #286188;
-    height: 10vh;
+    height: 6vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0px;
 }
 
 .logo .text {
