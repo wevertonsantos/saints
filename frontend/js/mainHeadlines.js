@@ -10,26 +10,35 @@ export const mainHeadlines = () => {
     sectionMainHeadlines.appendChild(list)
 }
 
-const items = (list) => {
+const items = (list) => {    
     for (let i = 0; i < 3; i++){
         const item = document.createElement("li")
         const link = document.createElement("a")
         const img = document.createElement("img")
-
+        
         list.appendChild(item)
         link.setAttribute("href","#")
         item.appendChild(link)
         link.appendChild(img)
 
         if (i == 0) {
+            item.classList.add("item-1")
             img.classList.add("main-img")
             img.setAttribute("src", "../assets/handontablets.jpg")
         } else if (i == 1) {
+            item.classList.add("item-2")
             img.classList.add("second-img")
             img.setAttribute("src","../assets/handontablets.jpg")
         } else {
+            item.classList.add("item-3")
             img.classList.add("third-img")
             img.setAttribute("src","../assets/handontablets.jpg")
         }
+    }
+
+    for (let i = 0; i < 10; i++) {
+        const item = document.createElement("li")
+        const link = document.createElement("a")
+        list.appendChild(item)
     }
 }
