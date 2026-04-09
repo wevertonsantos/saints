@@ -1,13 +1,30 @@
 .main-headlines{
     height: 90vh;
     background-color: #286188;
-    margin: 20px;
 }
 
 .main-headlines .items {
     display: grid;
-    gap: 18px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'main second'
+    'main third';
+    align-items: center;
+    justify-content: center;
+    column-gap: 25px;
+}
+
+.main-headlines .items .item-1 {
+    grid-area: main;
+}
+
+.main-headlines .items .item-2{
+    align-self: flex-start;
+    grid-area: second;
+}
+
+.main-headlines .items .item-3 {
+    align-self: flex-end;
+    grid-area: third;
 }
 
 .main-headlines .items .main-img{
