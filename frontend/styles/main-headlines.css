@@ -1,4 +1,10 @@
-.main-headlines .items {
+.main-headlines{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-headlines .images {
     display: grid;
     grid-template-areas: 
     'main second'
@@ -6,28 +12,46 @@
     align-items: center;
     justify-content: center;
     column-gap: 25px;
+    margin-right: 25px;
 }
 
-.main-headlines .items .item-1 {
+.main-headlines .images .img-1 {
     grid-area: main;
 }
 
-.main-headlines .items .item-2{
+.main-headlines .images .img-2{
     align-self: flex-start;
     grid-area: second;
 }
 
-.main-headlines .items .item-3 {
+.main-headlines .images .img-3 {
     align-self: flex-end;
     grid-area: third;
 }
 
-.main-headlines .items .main-img{
+.main-headlines .images .main-img{
     width: 656px;
     height: 754px;
 }
 
-.main-headlines .items .second-img,.third-img{
+.main-headlines .images .second-img,.third-img{
     width: 328px;
     height: 364px;
+}
+
+.main-headlines .top-headlines {
+    list-style: initial;
+    width: 70%;
+}
+
+.main-headlines .top-headlines .text {
+    width: 70%;
+    margin-bottom: 60px;
+    list-style: none;
+}
+
+.main-headlines .top-headlines .headline {
+    font-weight: bold;
+    margin: 0px 0px 25px 20px;
+    width: 70%;
 }
