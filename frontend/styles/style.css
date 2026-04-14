@@ -2,6 +2,7 @@
 @import "navbar.css";
 @import "logo.css";
 @import "main-headlines.css";
+@import "main.css";
 
 * {
     margin: 0;
