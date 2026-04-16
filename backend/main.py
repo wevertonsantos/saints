@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from routers import news
+
 from core.config import settings
 
 app = FastAPI(
@@ -9,6 +11,8 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc"
 )
+
+app.include_router(news.router)
 
 app.add_middleware(
     CORSMiddleware,
