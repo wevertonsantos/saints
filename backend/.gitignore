@@ -5,3 +5,4 @@ uv.lock
 .env
 .venv
 __pycache__
+database.db
