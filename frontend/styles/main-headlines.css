@@ -1,47 +1,24 @@
 .main-headlines{
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .main-headlines .images {
-    display: grid;
-    grid-template-areas: 
-    'main second'
-    'main third';
-    align-items: center;
-    justify-content: center;
-    column-gap: 25px;
-    margin-right: 25px;
 }
 
-.main-headlines .images .img-1 {
-    grid-area: main;
+.main-headlines .images .img-1 .main-img{
+    width: 100%;
+    height: 80%;
 }
 
-.main-headlines .images .img-2{
-    align-self: flex-start;
-    grid-area: second;
-}
-
-.main-headlines .images .img-3 {
-    align-self: flex-end;
-    grid-area: third;
-}
-
-.main-headlines .images .main-img{
-    width: 656px;
-    height: 754px;
-}
-
-.main-headlines .images .second-img,.third-img{
-    width: 328px;
-    height: 364px;
+.main-headlines .images .img-2 .second-img,
+.main-headlines .images .img-3 .third-img{
+    width: 100%;
+    height: auto;
 }
 
 .main-headlines .top-headlines {
     list-style: initial;
-    width: 70%;
+    width: 45%;
 }
 
 .main-headlines .top-headlines .text {
