@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from db.database import Base, engine
+from db.database import create_tables
 
 from routers import news
 
@@ -14,9 +14,9 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-app.include_router(news.router)
+app.include_router(news.router,prefix=settings.API_PREFIX)
 
-Base.metadata.create_all(bind=engine)
+create_tables()
 
 app.add_middleware(
     CORSMiddleware,
