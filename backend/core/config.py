@@ -3,7 +3,8 @@ from pydantic_settings import BaseSettings
 from pydantic import field_validator
 
 class Settings(BaseSettings):
-    
+    GROQ_API_KEY: str
+
     RSS_URL: str
 
     API_PREFIX: str = "/api"
