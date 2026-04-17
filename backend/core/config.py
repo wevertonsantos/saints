@@ -3,6 +3,9 @@ from pydantic_settings import BaseSettings
 from pydantic import field_validator
 
 class Settings(BaseSettings):
+    
+    RSS_URL: str
+
     API_PREFIX: str = "/api"
     DEBUG: bool = False
 
