@@ -7,8 +7,7 @@ from models.news import News
 from schemas.news import NewsResponse
 
 router = APIRouter(
-    prefix="/news",
-    tags=["news"]
+    prefix="/news"
 )
 
 # /api/news/endpoint
