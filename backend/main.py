@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from db.database import Base, engine
+
 from routers import news
 
 from core.config import settings
@@ -13,6 +15,8 @@ app = FastAPI(
 )
 
 app.include_router(news.router)
+
+Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
