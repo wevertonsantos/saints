@@ -45,6 +45,6 @@ def parse_news(news):
     category = lines[0][11:]
     title = lines[1][8:]
     first_line = lines[3:][0][10:]
-    rest = lines[3:]
+    rest = lines[4:]
     content = " ".join([first_line] + rest)
     return {'category':category,'title':title,'content':content}
