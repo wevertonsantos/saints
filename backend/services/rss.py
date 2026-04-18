@@ -1,12 +1,13 @@
 import feedparser
 from core.config import settings
 
-def fetch_urls():
+def fetch_entries():
     data = feedparser.parse(settings.RSS_URL)
 
-    urls = []
+    entries = []
 
     for entry in data.entries:
-        urls.append(entry.link)
+        if entry.tags[0]['term'] != settings.RSS_TAG:
+            entries.append({'category':entry.tags[0]['term'],'url':entry.link})
 
-    return urls
+    return entries
