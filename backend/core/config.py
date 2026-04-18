@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     GROQ_API_KEY: str
 
     RSS_URL: str
+    RSS_TAG: str
 
     API_PREFIX: str = "/api"
     DEBUG: bool = False
