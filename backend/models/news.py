@@ -16,3 +16,4 @@ class News(Base):
     content = Column(String)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     category = Column(String)
+    url = Column(String)
