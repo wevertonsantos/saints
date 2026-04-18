@@ -19,6 +19,7 @@ def generate_news():
         E neste conteúdo original: "{article['content']}"
 
         Gere exatamente neste formato:
+        CATEGORIA: {article['category']}
         TÍTULO: [título reescrito em português, objetivo e impactante]
         CONTEÚDO: [notícia completa em português, tom profissional, entre 300 a 400 palavras, com introdução, desenvolvimento e conclusão]
 
@@ -41,8 +42,9 @@ def generate_news():
 
 def parse_news(news):
     lines = news.split('\n')
-    title = lines[0][8:]
-    first_line = lines[2:][0][10:]
+    category = lines[0][11:]
+    title = lines[1][8:]
+    first_line = lines[3:][0][10:]
     rest = lines[3:]
     content = " ".join([first_line] + rest)
-    return {'title':title,'content':content}
+    return {'category':category,'title':title,'content':content}
