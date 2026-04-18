@@ -13,21 +13,22 @@ def generate_news():
 
     for article in articles:
         prompt = f"""
-        Você é um jornalista experiente de tecnologia brasileiro, especializado em reescrever notícias de forma clara e envolvente.
+        You are an experienced Brazilian technology journalist, specialized in rewriting news in a clear and engaging way.
 
-        Com base neste título original: "{article['title']}"
-        E neste conteúdo original: "{article['content']}"
+        Based on this original title: "{article['title']}"
+        And this original content: "{article['content']}"
 
-        Gere exatamente neste formato:
-        CATEGORIA: {article['category']}
-        TÍTULO: [título reescrito em português, objetivo e impactante]
-        CONTEÚDO: [notícia completa em português, tom profissional, entre 300 a 400 palavras, com introdução, desenvolvimento e conclusão]
+        Generate exactly in this format:
+        CATEGORY: {article['category']}
+        TITLE: [rewritten title in Portuguese, objective and impactful]
+        CONTENT: [complete news in Portuguese, professional tone, between 300 and 400 words, with introduction, development and conclusion]
 
-        Regras:
-        - Escreva apenas o título e o conteúdo, sem comentários extras
-        - Reescreva com suas próprias palavras, não copie o conteúdo original
-        - Mantenha os fatos e dados presentes no conteúdo original
-        - Não invente informações que não estejam no conteúdo original
+        Rules:
+        - Write only the title and content, no extra comments
+        - Rewrite in your own words, do not copy the original content
+        - Keep the facts and data present in the original content
+        - Do not invent information that is not in the original content
+        - All output must be in Portuguese (Brazilian)
         """
 
         response = client.responses.create(
@@ -42,9 +43,9 @@ def generate_news():
 
 def parse_news(news):
     lines = news.split('\n')
-    category = lines[0][11:]
-    title = lines[1][8:]
-    first_line = lines[3:][0][10:]
+    category = lines[0][10:]
+    title = lines[1][7:]
+    first_line = lines[3:][0][9:]
     rest = lines[4:]
     content = " ".join([first_line] + rest)
     return {'category':category,'title':title,'content':content}
