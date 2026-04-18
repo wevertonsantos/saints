@@ -1,12 +1,12 @@
 import feedparser
 from core.config import settings
 
-def fetch_titles_news():
+def fetch_urls():
     data = feedparser.parse(settings.RSS_URL)
 
-    entries_list = []
+    urls = []
 
     for entry in data.entries:
-        entries_list.append(entry.title)
+        urls.append(entry.link)
 
-    return entries_list
+    return urls
