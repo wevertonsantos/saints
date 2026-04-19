@@ -1,6 +1,10 @@
 from openai import OpenAI
+
 from core.config import settings
+
 from services.scraper import extract_articles
+
+from openai import RateLimitError
 
 client = OpenAI(
     api_key=settings.GROQ_API_KEY,
@@ -9,9 +13,11 @@ client = OpenAI(
 
 def generate_news():
     articles = extract_articles()
+    url = ''
     news = []
 
     for article in articles:
+        url = article['url']
         prompt = f"""
         You are an experienced Brazilian technology journalist, specialized in rewriting news in a clear and engaging way.
 
@@ -19,7 +25,7 @@ def generate_news():
         And this original content: "{article['content']}"
 
         Generate exactly in this format:
-        CATEGORY: {article['category']}
+        CATEGORY: {article['category']} [rewritten category in Portuguese]
         TITLE: [rewritten title in Portuguese, objective and impactful]
         CONTENT: [complete news in Portuguese, professional tone, between 300 and 400 words, with introduction, development and conclusion]
 
@@ -31,21 +37,27 @@ def generate_news():
         - All output must be in Portuguese (Brazilian)
         """
 
-        response = client.responses.create(
-            input=prompt,
-            model="llama-3.3-70b-versatile")
+        try:
+            response = client.responses.create(
+                input=prompt,
+                model="llama-3.3-70b-versatile")
+            parsed = parse_news(response.output_text,url)
+            news.append(parsed)
+        except RateLimitError:
+            print("Rate limit reached, please try again later.")
+            break
+        except Exception as e:
+            print(f'Error generating news item: {e}')
+            continue
         
-        parsed = parse_news(response.output_text)
-
-        news.append(parsed)
-
     return news
 
-def parse_news(news):
-    lines = news.split('\n')
-    category = lines[0][10:]
-    title = lines[1][7:]
-    first_line = lines[3:][0][9:]
-    rest = lines[4:]
-    content = " ".join([first_line] + rest)
-    return {'category':category,'title':title,'content':content}
+def parse_news(news,url):
+    parts = news.split("TITLE:")
+    category = parts[0].replace("CATEGORY:", "").strip()
+
+    title_and_content = parts[1].split("CONTENT:")
+    title = title_and_content[0].strip()
+    content = title_and_content[1].strip()
+
+    return {'url':url,'category':category,'title':title,'content':content}
