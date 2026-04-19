@@ -6,7 +6,11 @@ class Settings(BaseSettings):
     GROQ_API_KEY: str
 
     RSS_URL: str
-    RSS_TAG: str
+    RSS_TAGS: str = ""
+
+    @field_validator("RSS_TAGS")
+    def parse_rss_tags(cls, v: str) -> list:
+        return v.split(",") if v else []
 
     API_PREFIX: str = "/api"
     DEBUG: bool = False
