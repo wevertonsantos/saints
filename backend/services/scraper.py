@@ -8,6 +8,6 @@ def extract_articles():
         article = Article(entry['url'])
         article.download()
         article.parse()
-        articles.append({'category':entry['category'],'title':article.title,'content':article.text})
+        articles.append({'url':entry['url'],'category':entry['category'],'title':article.title,'content':article.text})
 
     return articles
