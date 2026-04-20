@@ -1,34 +1,79 @@
 .main-headlines{
     display: flex;
+    justify-content: center;
 }
 
-.main-headlines .images {
-}
-
-.main-headlines .images .img-1 .main-img{
+.main-headlines .images{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "img-1 img-2"
+    "img-1 img-3";
+    height: 80vh;
     width: 100%;
-    height: 80%;
 }
 
-.main-headlines .images .img-2 .second-img,
-.main-headlines .images .img-3 .third-img{
+.main-headlines .images a {
+    overflow: hidden;
+}
+
+.main-headlines .images .main-img{
+    grid-area: img-1;
+    margin-right: 25px;
+}
+
+.main-headlines .images .second-img{
+    grid-area: img-2;
+    margin-bottom: 25px;
+}
+
+.main-headlines .images .third-img{
+    grid-area: img-3;
+}
+
+.main-headlines .images a img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.main-headlines .images .img-1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-headlines .images .img-1,
+.main-headlines .images .img-2,
+.main-headlines .images .img-3 {
+    overflow: hidden;
 }
 
 .main-headlines .top-headlines {
-    list-style: initial;
-    width: 45%;
+    list-style: none;
+    width: 550px;
 }
 
 .main-headlines .top-headlines .text {
-    width: 70%;
-    margin-bottom: 60px;
-    list-style: none;
+    margin: 0px 0px 30px 20px;
 }
 
 .main-headlines .top-headlines .headline {
-    font-weight: bold;
+    font-weight: 500;
     margin: 0px 0px 25px 20px;
-    width: 70%;
+}
+
+.main-headlines .top-headlines .headline a{
+    display: flex;
+}
+
+.main-headlines .top-headlines .headline .square{
+    margin-right: 15px;
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    background-color: #fff;
+    align-self: center;
 }
