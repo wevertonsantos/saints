@@ -24,10 +24,10 @@ def generate_news():
         Based on this original title: "{article['title']}"
         And this original content: "{article['content']}"
 
-        Generate exactly in this format:
-        CATEGORY: {article['category']} [rewritten category in Portuguese]
-        TITLE: [rewritten title in Portuguese, objective and impactful]
-        CONTENT: [complete news in Portuguese, professional tone, between 300 and 400 words, with introduction, development and conclusion]
+        Generate exactly in this format (use these exact labels in English):
+        CATEGORY: {article['category']}
+        TITLE: [rewritten title in Portuguese]
+        CONTENT: [complete news in Portuguese, between 300 and 400 words]
 
         Rules:
         - Write only the title and content, no extra comments
